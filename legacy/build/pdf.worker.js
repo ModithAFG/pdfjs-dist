@@ -109,9 +109,6 @@ class WorkerMessageHandler {
     for (const property in []) {
       enumerableProperties.push(property);
     }
-    if (enumerableProperties.length) {
-      throw new Error("The `Array.prototype` contains unexpected enumerable properties: " + enumerableProperties.join(", ") + "; thus breaking e.g. `for...in` iteration of `Array`s.");
-    }
     if (typeof ReadableStream === "undefined") {
       const partialMsg = "The browser/environment lacks native support for critical " + "functionality used by the PDF.js library (e.g. `ReadableStream`); ";
       if (_is_node.isNodeJS) {
